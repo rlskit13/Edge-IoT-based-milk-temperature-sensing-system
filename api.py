@@ -13,7 +13,12 @@ app.config["DEBUG"] = True
 
 #def home():
 #    return '''<h1>Test 1.</h1>'''
-
+def dict_factory(cursor, row):
+    d = {}
+    for idx, col in enumerate(cursor.description):
+        d[col[0]] = row[idx]
+    return d
+  
 @app.route('/api/v1/SensorData/all', methods=['GET'])
 # Fetch all data from Tank_1 & Tank_2 tables
 def api():
