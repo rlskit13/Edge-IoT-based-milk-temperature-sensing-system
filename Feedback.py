@@ -45,7 +45,7 @@ def Data_Handler(jsonData):
 	
 	del dbObj
 	print (f"Inserted Temperature Data into {SensorID}.")
-	print ("")
+	##print ("")
 
 
 
